@@ -14,7 +14,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
 
         int startX;
         int startY;
-        char direction = 'U'; // U D L R
+        char direction = 'U';
         int velocityX = 0;
         int velocityY = 0;
 
@@ -86,7 +86,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     private Image pacmanLeftImage;
     private Image pacmanRightImage;
 
-    //X = wall, O = skip, P = pac man, ' ' = food
+    //X = wall, O = skip, P = pacman, ' ' = food
     //Ghosts: b = blue, o = orange, p = pink, r = red
     private String[] tileMap = {
         "XXXXXXXXXXXXXXXXXXX",
@@ -118,7 +118,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
     Block pacman;
 
     Timer gameLoop;
-    char[] directions = {'U', 'D', 'L', 'R'}; //up down left right
+    char[] directions = {'U', 'D', 'L', 'R'};
     Random random = new Random();
     int score = 0;
     int lives = 3;
@@ -130,7 +130,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
 
-        //load images
+        //loading images
         wallImage = new ImageIcon(getClass().getResource("./wall.png")).getImage();
         blueGhostImage = new ImageIcon(getClass().getResource("./blueGhost.png")).getImage();
         orangeGhostImage = new ImageIcon(getClass().getResource("./orangeGhost.png")).getImage();
@@ -147,7 +147,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             char newDirection = directions[random.nextInt(4)];
             ghost.updateDirection(newDirection);
         }
-        //how long it takes to start timer, milliseconds gone between frames
+
         gameLoop = new Timer(50, this); //20fps (1000/50)
         gameLoop.start();
 
@@ -217,6 +217,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         for (Block food : foods) {
             g.fillRect(food.x, food.y, food.width, food.height);
         }
+
         //score
         g.setFont(new Font("Arial", Font.PLAIN, 18));
         if (gameOver) {
@@ -231,7 +232,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         pacman.x += pacman.velocityX;
         pacman.y += pacman.velocityY;
 
-        //check wall collisions
+        //checking wall collisions
         for (Block wall : walls) {
             if (collision(pacman, wall)) {
                 pacman.x -= pacman.velocityX;
@@ -240,7 +241,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             }
         }
 
-        //check ghost collisions
+        //checking ghost collisions
         for (Block ghost : ghosts) {
             if (collision(ghost, pacman)) {
                 lives -= 1;
@@ -266,7 +267,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             }
         }
 
-        //check food collision
+        //checking food collision
         Block foodEaten = null;
         for (Block food : foods) {
             if (collision(pacman, food)) {
@@ -325,6 +326,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
             gameOver = false;
             gameLoop.start();
         }
+
         // System.out.println("KeyEvent: " + e.getKeyCode());
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             pacman.updateDirection('U');
