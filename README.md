@@ -40,7 +40,9 @@ The goal is simple: Eat all the food dots while avoiding the four colorful ghost
 ## Team Members
 
 1. Junayed Ahmed Joy
+   
    Reg : 2023831028
 
-2.MD Saiful Islam Jakaria
+2. MD Saiful Islam Jakaria
+   
    Reg : 2023831030
