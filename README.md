@@ -21,6 +21,26 @@ The goal is simple: Eat all the food dots while avoiding the four colorful ghost
 4. Score System: You get 10 points for every food dot you eat.
 5. Map Design: The game level is created using a tile-map system.
 
+## Tools Used
+1. Java : The main programming language.
+2. Swing: Used to create the game window and panels.
+3. AWT  : Used for drawing images and handling keyboard input.
 
+## Project Files(In src)
+1. App.java: This is the main file that starts the game and sets up the window.
+2. PacMan.java: This file contains the game logic, including how characters move and how the game is drawn.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## How to Run the Game
+
+1. Download or clone this project.
+   https://github.com/JUNAYED-2023831028/pacman
+2. Open the project in an IDE like IntelliJ IDEA, VS Code, or Eclipse.
+3. Run the App.java file.
+
+## Team Members
+
+1. Junayed Ahmed Joy
+   Reg : 2023831028
+
+2.MD Saiful Islam Jakaria
+   Reg : 2023831030
